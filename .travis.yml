@@ -1,5 +1,5 @@
 sudo: true
-dist: yakkety
+dist: trsty
 addons:
  apt:
   packages:
@@ -16,7 +16,6 @@ addons:
   - gperf
   - imagemagick
   - lib32ncurses5-dev
-  - lib32readline-gplv2-dev
   - lib32z1-dev
   - libesd0-dev
   - liblz4-tool
