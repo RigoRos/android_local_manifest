@@ -1,3 +1,4 @@
+{
 addons:
   apt:
     packages:
@@ -41,5 +42,4 @@ addons:
      - croot
      - brunch cm_a3ultexx-userdebug
      - curl -X POST "https://${BB_AUTH_STRING}@api.bitbucket.org/2.0/repositories/Rigo_Ros/android_local_manifest/downloads" --form files=@"out/target/product/a3ultexx/${LINEAGE_VERSION}.zip"
-     
-     
+ }
