@@ -19,6 +19,7 @@ addons:
   - lib32z1-dev
   - libesd0-dev
   - liblz4-tool
+  - libncurses5-dev
   - lib32readline6-dev
   - libsdl1.2-dev
   - libwxgtk3.0-dev
