@@ -1,0 +1,45 @@
+addons:
+  apt:
+    packages:
+     - openjdk-8-jdk 
+     - bc 
+     - bison
+     - build-essential 
+     - curl 
+     - flex 
+     - g++-multilib 
+     - gcc-multilib 
+     - git
+     - gnupg 
+     - gperf 
+     - imagemagick 
+     - lib32ncurses5-dev 
+     - lib32readline-gplv2-dev 
+     - lib32z1-dev 
+     - libesd0-dev 
+     - liblz4-tool 
+     - lib32readline6-dev 
+     - libsdl1.2-dev 
+     - libwxgtk3.0-dev 
+     - libxml2 
+     - libxml2-utils 
+     - lzop pngcrush 
+     - schedtool 
+     - squashfs-tools 
+     - xsltproc 
+     - zip 
+     - zlib1g-dev
+ script:
+     - curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+     - chmod a+x ~/bin/repo
+     - export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
+     - repo init -u git://github.com/LineageOS/android.git -b cm-14.1 --depth=1
+     - mkdir .repo/local_manifests
+     - mv local_manifest.xml .repo/local_manifests/local_manifest.xml
+     - repo sync -c -qq -j16
+     - source build/envsetup.sh 
+     - croot
+     - brunch cm_a3ultexx-userdebug
+     - curl -X POST "https://${BB_AUTH_STRING}@api.bitbucket.org/2.0/repositories/Rigo_Ros/android_local_manifest/downloads" --form files=@"out/target/product/a3ultexx/${LINEAGE_VERSION}.zip"
+     
+     
