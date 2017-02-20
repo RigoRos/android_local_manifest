@@ -42,6 +42,7 @@ install:
   - curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
   - chmod a+x ~/bin/repo
   - export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
+  - git config --global color.ui true
   - repo init -u git://github.com/LineageOS/android.git -b cm-14.1 --depth=1
   - mkdir .repo/local_manifests
   - mv local_manifest.xml .repo/local_manifests/local_manifest.xml
