@@ -35,7 +35,7 @@ addons:
   - xsltproc
   - zip
   - zlib1g-dev
- before_script:
+install:
   - update-java-alternatives -s java-1.8.0-openjdk-amd64
   - curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
   - chmod a+x ~/bin/repo
